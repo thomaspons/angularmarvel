@@ -2,7 +2,7 @@
     <div class="panel-heading"> <h2>{{ comics.title }}</h2></div>
     <div class="panel-body">
         <div class="col-md-12 heroes-description">
-            {{ comics.description }}
+            <span ng-bind-html="comics.description"></span>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -13,7 +13,7 @@
                 <label>Personnages concernés : </label>
                 <ul>
                     <li ng-repeat="character in comics.characters.items">
-                        <a href="#/heroes/{{ character.name }}">{{ character.name }}</a>
+                        <a ng-click="getHeroDetail(character)">{{ character.name }}</a>
                     </li>
                 </ul>
             </div>

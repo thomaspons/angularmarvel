@@ -40,6 +40,19 @@ body {
     max-width: 530px;
 }
 
+.img-thumbnail {
+	width: 140px !important;
+	height: 140px !important;
+}
+
+.heroes-list {
+	display: inline-block;
+}
+
+.heroes-title {
+	overflow: hidden;
+}
+
 .heroes-description {
     margin-bottom: 45px;
     font-size: 18px;

@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('condingDojoApp')
-    .factory('ComicsFactory', function($resource, ApiKey){
-        return $resource('http://gateway.marvel.com/v1/public/comics/:id', {id: '@id', 'apikey': ApiKey.KEY});
+    .factory('ComicsFactory', function($resource, Api){
+        return $resource(Api.BASE + '/comics/:id', {id: '@id', 'apikey': Api.KEY});
     });

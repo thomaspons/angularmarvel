@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('condingDojoApp')
-    .controller('ComicsCtrl', function ($scope, ComicsFactory, $routeParams, Api, HeroesFactory, $http, $location) {
-        ComicsFactory.get({id: $routeParams.id}, function(data){
-            $scope.comics = data.data.results[0];
+    .controller('SeriesCtrl', function ($scope, SeriesFactory, $routeParams, Api, HeroesFactory, $http, $location) {
+        SeriesFactory.get({id: $routeParams.id}, function(data){
+            $scope.series = data.data.results[0];
         });
 		
 		$scope.getHeroDetail = function(hero){

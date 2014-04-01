@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading"> <h2>{{ series.title }}</h2></div>
+    <div class="panel-body">
+        <div class="col-md-12 heroes-description">
+            <span ng-bind-html="series.description"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Comics : </label>
+                <ul>
+                    <li ng-repeat="comic in series.comics.items">
+                        <a href="#/comics/{{ comic.id }}">{{ comic.name }}</a>
+                    </li>
+                </ul>
+
+                <label>Personnages concernés : </label>
+                <ul>
+                    <li ng-repeat="character in series.characters.items">
+                        <a ng-click="getHeroDetail(character)">{{ character.name }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <img class="heroes-portrait" ng-src="{{series.thumbnail.path}}.{{series.thumbnail.extension}}"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
