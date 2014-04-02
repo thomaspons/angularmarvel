@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('condingDojoApp')
+angular.module('codingDojoApp')
   .controller('HeroesCtrl', function ($scope, HeroesFactory, $routeParams, $http, Api) {
         HeroesFactory.get({id: $routeParams.id}, function(data){
          $scope.character = data.data.results[0];

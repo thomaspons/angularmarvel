@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('condingDojoApp')
+angular.module('codingDojoApp')
     .constant('Api', {
         KEY: 'XXXX',
         BASE: 'http://gateway.marvel.com/v1/public'

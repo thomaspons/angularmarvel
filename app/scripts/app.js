@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('condingDojoApp', [
+angular.module('codingDojoApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
