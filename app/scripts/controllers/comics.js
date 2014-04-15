@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('codingDojoApp')
-    .controller('ComicsCtrl', function ($scope, ComicsFactory, $routeParams, Api, HeroesFactory, $http, $location) {
+    .controller('ComicsCtrl', function ($scope, ComicsFactory, $routeParams, Api, $http, $location) {
         ComicsFactory.get({id: $routeParams.id}, function(data){
             $scope.comics = data.data.results[0];
         });

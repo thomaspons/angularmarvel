@@ -12,4 +12,11 @@ angular.module('codingDojoApp')
                 $location.path('heroes/' + data.data.results[0].id);
             });
 		};
+
+        $scope.getComicDetail = function(comic){
+            $http({method: 'GET', url: comic.resourceURI, params: {apikey: Api.KEY}}).
+                success(function(data, status, headers, config){
+                    $location.path('comics/' + data.data.results[0].id);
+                });
+        };
     });

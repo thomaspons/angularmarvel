@@ -1,8 +1,8 @@
-<div class="panel panel-default">
-    <div class="panel-heading"> <h2>{{ character.name }}</h2></div>
-    <div class="panel-body">
+<div class="row">
+    <div class="page-header"> <h2>{{ character.name }}</h2></div>
+    <div class="col-md-12">
         <div class="col-md-12 heroes-description">
-            {{ character.description }}
+            <span ng-bind-html="character.description"></span>
         </div>
         <div class="row">
             <div class="col-md-6">

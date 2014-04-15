@@ -4,9 +4,10 @@ angular.module('codingDojoApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'd3Module'
 ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
     $routeProvider
 	  .when('/', {
 	    templateUrl: 'views/main.html',
@@ -28,4 +29,6 @@ angular.module('codingDojoApp', [
         templateUrl: 'views/stories.html',
         controller: 'StoriesCtrl'
       });
+
+      $httpProvider.interceptors.push('LoaderInterceptor');
   });

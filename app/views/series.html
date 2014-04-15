@@ -1,6 +1,6 @@
-<div class="panel panel-default">
-    <div class="panel-heading"> <h2>{{ series.title }}</h2></div>
-    <div class="panel-body">
+<div class="row">
+    <div class="page-header"> <h2>{{ series.title }}</h2></div>
+    <div class="col-md-12">
         <div class="col-md-12 heroes-description">
             <span ng-bind-html="series.description"></span>
         </div>
@@ -9,7 +9,7 @@
                 <label>Comics : </label>
                 <ul>
                     <li ng-repeat="comic in series.comics.items">
-                        <a href="#/comics/{{ comic.id }}">{{ comic.name }}</a>
+                        <a ng-click="getComicDetail(comic)">{{ comic.name }}</a>
                     </li>
                 </ul>
 

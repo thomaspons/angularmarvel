@@ -1,22 +1,42 @@
-<div class="panel panel-default">
-    <div class="panel-heading"> <h2>Welcome to Marvel universe!</h2></div>
-    <div class="panel-body">
-		<p>
-			Welcome to Marvel Universe ! </br>
-			To find an hero you have to search him by his name.</br>
-			But only with letter that matches the begin of his name.
-		</p>
-		<form name="searchForm" ng-submit="searchHeroes()">
-			<input type="text" ng-model="search"/>
-			<input type="submit" value="Search"/>
-		</form>
-		<div>
-			<ul>
-				<li class="heroes-list" ng-repeat="hero in heroes">
-					<img ng-click="goToHeroDetail(hero.id)" title="{{hero.name}}" class="img-thumbnail" ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
-				</li>
-			</ul>
-		</div>
+<div class="row">
+    <div class="page-header"><h2>Welcome to Marvel universe!</h2></div>
+    <div class="col-md-12">
+        <p>
+            Welcome to Marvel Universe ! </br>
+            To find an hero you have to search him by his name.</br>
+            But only with letter that matches the begin of his name.
+        </p>
+
+        <form name="searchForm" ng-submit="searchHeroes()">
+            <div class="input-group col-md-5">
+                <input type="text" class="form-control" ng-model="search"/>
+                <span class="input-group-btn">
+                    <input type="submit" class="btn btn-primary" value="Search"/>
+                </span>
+            </div>
+        </form>
+        <div>
+            <a ng-show="heroes.length > 0" data-toggle="modal" data-target="#graph-modal">See Graph</a>
+            <ul>
+                <li class="heroes-list" ng-repeat="hero in heroes">
+                    <img ng-click="goToHeroDetail(hero.id)" title="{{hero.name}}" class="img-thumbnail"
+                         ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal fade" data-backdrop="false" id="graph-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><a>Graph</a></h4>
+                </div>
+                <div class="modal-body">
+                    <bubble-chart modal="#graph-modal" chart-data="childrens"></bubble-chart>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
